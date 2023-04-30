@@ -1,0 +1,12 @@
+-- Header –
+Description=[[this can be used scan the ports and display a message saying that it is is oppen]]
+Author=’powell’
+-- Rule --
+portrule = function(host, port)
+	return port.protocol == "tcp"
+		and port.state == "open"
+end
+-- Action --
+action = function(host, port)
+	return "THER PORT IS OPEN"
+end

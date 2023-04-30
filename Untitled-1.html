@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AEHPT ASSIGNMENT 2</title>
+</head>
+<body>
+<h1>NMAP NSE PORT SCANNING USING LUA</h1>
+<p>this can be used scan the ports and display a message saying that it is is open</p>
+<h2>Script Details</h2>
+<ul>
+<li><strong>Name:</strong> Port scan</li>
+<li><strong>Author:</strong> POWELL</li>
+</ul>
+<h2>PORT SCANNING Script </h2>
+<pre><code>-- Header –
+    Description=[[this can be used scan the ports and display a message saying that it is is oppen]]
+    Author=’powell’
+    -- Rule --
+    portrule = function(host, port)
+        return port.protocol == "tcp"
+            and port.state == "open"
+    end
+    -- Action --
+    action = function(host, port)
+        return "THER PORT IS OPEN"
+    end
+    
+</code></pre>
+<h2>usage</h2>
+<p>nmap --script=ps <taget ip> </p>
+</body>
+</html>
